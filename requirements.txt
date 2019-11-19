@@ -40,7 +40,7 @@ MySQL-python==1.2.5
 oats-basics==2.1.42
 -e git+ssh://git@stash.sd.apple.com/gpuswcis/oats-web.git@620270cf35b802b39c6cb07e4e495eed5718316d#egg=oats_web
 packaging==19.0
-paramiko==1.15.2
+paramiko==2.0.9
 pathlib2==2.3.3
 phabricator==0.7.0
 pluggy==0.12.0
