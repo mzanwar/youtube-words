@@ -17,10 +17,11 @@ index = f"{normalized_term}_index"
 queue = f"{normalized_term}_queue"
 
 
-def write_to_es(transcript):
+def write_to_es(transcript, video_id):
     actions = []
 
     for map_of_text in transcript:
+        map_of_text["video_id"] = video_id
         actions.append(
             {
                 "_index": f"{index}",
@@ -42,7 +43,7 @@ def main():
         video_id = video_id.decode("utf-8")
         try:
             transcript = YouTubeTranscriptApi.get_transcript(video_id)
-            write_to_es(transcript)
+            write_to_es(transcript, video_id)
         except KeyboardInterrupt:
             print('SIGINT or CTRL-C detected. Exiting gracefully')
             exit(0)
