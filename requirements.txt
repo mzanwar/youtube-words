@@ -19,7 +19,7 @@ ecdsa==0.13.2
 entrypoints==0.3
 enum34==1.1.6
 face==19.1.1
-Flask==0.12.2
+Flask==1.0
 Flask-Caching==1.4.0
 funcsigs==1.0.2
 functools32==3.2.3.post2
