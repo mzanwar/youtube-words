@@ -15,7 +15,7 @@ croniter==0.3.30
 cryptography==2.7
 decorator==4.4.0
 dpath==1.4.0
-ecdsa==0.13.2
+ecdsa==0.13.3
 entrypoints==0.3
 enum34==1.1.6
 face==19.1.1
