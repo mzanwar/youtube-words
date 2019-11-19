@@ -7,7 +7,7 @@ from bloom_filter import BloomFilter
 redis = redis.Redis(host='localhost', port=6379, db=0)
 bloom = BloomFilter(max_elements=1000000000, error_rate=0.0001)
 
-pattern = "watch\?v=.*?(?=\")\""
+pattern = "watch\?v=.{11}"
 youtube_prefix = "https://youtube.com/watch?v="
 
 search_term = sys.argv[1]
@@ -22,7 +22,7 @@ def regex_ids(html):
     s = set()
     list_of_ids = re.findall(pattern, html)
     for id in list_of_ids:
-        s.add(id.split("=")[1][:-1])
+        s.add(id.split("=")[1])
     return s
 
 
