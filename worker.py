@@ -25,9 +25,11 @@ def write_to_es(transcript, video_id):
         actions.append(
             {
                 "_index": f"{index}",
+                "_type": "document",
                 "_source": map_of_text
             }
         )
+    print(actions)
     helpers.bulk(es, actions)
 
 
