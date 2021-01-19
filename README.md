@@ -3,7 +3,7 @@ README:
 Getting started:
 
 1. Make sure you have pip installed
-2. `python3 - venv venv`
+2. `python3 -m venv venv`
 3. `source venv/bin/activate` 
 4. run a `pip install -r requirements.txt`
 5. Get redis and ES going

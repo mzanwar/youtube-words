@@ -4,14 +4,20 @@ import re
 import sys
 from bloom_filter import BloomFilter
 
+# Using Redis to store the
 redis = redis.Redis(host='localhost', port=6379, db=0)
-bloom = BloomFilter(max_elements=1000000000, error_rate=0.0001)
+
+bloom = BloomFilter(max_elements=10000000, error_rate=0.0001)
 
 pattern = "watch\?v=.{11}"
 youtube_prefix = "https://youtube.com/watch?v="
 
+if len(sys.argv) != 2:
+    print("Missing search term - please pass in search term (python -m main.py coronavirus")
+    exit(0)
 search_term = sys.argv[1]
 normalized_term = search_term.replace("+", "_")
+
 index = f"{normalized_term}_index"
 queue = f"{normalized_term}_queue"
 
